@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sumit Pokhrel — Portfolio</title>
+  <!-- link to CSS (put this file in assets/css/style.css) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo">Sumit <span>Pokhrel</span></div>
+        <div class="tag">BCSIT • Aspiring Project Manager</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero container">
+      <div class="hero-left">
+        <h1 class="hero-title">
+          Building<br />
+          <span class="line">digital</span><br />
+          <span class="gradient">experiences</span>
+        </h1>
+
+        <p class="hero-desc">
+          I design and build clean, scalable web applications. I love solving problems
+          with practical solutions and leading teams to ship real results.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+
+        <ul class="quick-info">
+          <li><strong>Email:</strong> mbpokharel@gmail.com</li>
+          <li><strong>Phone:</strong> 9868185156</li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/cyberguycoder" target="_blank">cyberguycoder</a></li>
+        </ul>
+      </div>
+
+      <div class="hero-right">
+        <!-- profile placeholder (replace with your photo) -->
+        <div class="profile-card">
+          <img src="assets/img/1763000002814.jpg" alt="Sumit Pokhrel" />
+          <div class="profile-info">
+            <h3>Sumit Pokhrel</h3>
+            <p>BCSIT Student • Web Developer • Future Project Manager</p>
+            <a href="assets/sumit_pokhrel_resume.pdf" class="small-btn" download>Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container about">
+      <div class="about-left">
+        <h2>About Me</h2>
+        <p>
+          I am a BCSIT student at Pokhara College of Management. I focus on web development,
+          database management, and project workflows. I enjoy teamwork, planning, and delivering
+          small-to-medium scale IT projects from idea to deployment.
+        </p>
+      
+        <p>
+          My project experience includes building an Employee Management System using PHP & MySQL,
+          and I have completed workshops on Laravel, Git & GitHub, and UI/UX basics.
+        </p>
+      </div>
+
+      <div class="about-right">
+        <div class="card">
+          <h3>Tech Stack & Tools</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP, MySQL</li>
+            <li>Bootstrap, Laravel (basics)</li>
+            <li>Figma (UI/UX)</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-card">
+        <div class="project-left">
+          <h3>Employee Management System</h3>
+          <p class="muted">
+            Web-based system to manage employee records, tasks, and evaluations. Built with core
+            PHP & MySQL — supports CRUD, task assignments, and admin role management.
+          </p>
+          <a href="projects/employee-management-system.html" class="btn btn-primary small">Open Project Page</a>
+        </div>
+
+        <div class="project-right">
+          <img src="assets/img/placeholder-project.png" alt="EMS screenshot" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="container certificates">
+      <h2 class="section-title">Certificates & Workshops</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <h4>Laravel Framework Training</h4>
+          <p class="muted">Pokhara College of Management — (add date)</p>
+          <a href="certificates/laravel-training.pdf" class="small-btn" download>Download</a>
+        </div>
+
+        <div class="cert-card">
+          <h4>Git & GitHub Workshop</h4>
+          <p class="muted">Pokhara College of Management — (add date)</p>
+          <a href="certificates/git-github-workshop.pdf" class="small-btn" download>Download</a>
+        </div>
+
+        <div class="cert-card">
+          <h4>UI/UX Basics</h4>
+          <p class="muted">Pokhara College of Management — (add date)</p>
+          <a href="certificates/uiux-workshop.pdf" class="small-btn" download>Download</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container contact">
+      <h2 class="section-title center">Contact Me</h2>
+
+      <div class="contact-wrap">
+        <form class="contact-card" action="contact.php" method="POST">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="your@example.com" required />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button class="btn btn-primary big" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 • Sumit Pokhrel • Pokhara, Nepal</div>
+  </footer>
+
+</body>
+</html>
