@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Sumit Pokhrel</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Contact</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects/employee-management-system.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="contact-form">
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Or contact directly at: mbpokharel@gmail.com</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Sumit Pokhrel</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: 'mbpokharel@gmail.com' // Your Gmail
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams) // Replace with your service and template IDs
+        .then(function(response) {
+          alert('Message sent successfully!');
+          document.getElementById('contactForm').reset();
+        }, function(error) {
+          alert('Failed to send message. Please try again.');
+          console.log('FAILED...', error);
+        });
+    });
+  </script>
+</body>
+</html>
+    <div class="container">
+      <h1>Contact</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects/employee-management-system.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="contact-form">
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Or contact directly at: mbpokharel@gmail.com</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Sumit Pokhrel</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = 'Portfolio Contact from ' + name;
+      const body = 'Name: ' + name + '%0AEmail: ' + email + '%0A%0AMessage:%0A' + encodeURIComponent(message);
+      const mailto = 'mailto:mbpokharel@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
