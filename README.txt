@@ -9,7 +9,7 @@ Open the `index.html` in a browser (for static pages) or run a local PHP server 
 - index.html — Home page
 - about.html — About page
 - certificates.html — Certificates index
-- projects/employee-management-system.html — Project page (separate)
+- projects/employee-management-system.html — Project page (separate, links to an external GitHub repository; not original work)
 - contact.php — Contact form and handler (requires PHP to send mail)
 - assets/css/style.css
 - assets/js/main.js
