@@ -67,8 +67,9 @@
           alert('Message sent successfully!');
           document.getElementById('contactForm').reset();
         }, function(error) {
-          alert('Failed to send message. Please try again.');
-          console.log('FAILED...', error);
+          const errText = error && (error.text || error.message || JSON.stringify(error));
+          alert('Failed to send message. Check console for details.');
+          console.error('EmailJS send error:', errText, error);
         });
     });
   </script>
