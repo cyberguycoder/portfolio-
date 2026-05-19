@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EMS — Setup Guide</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body { background: #f4f7fb; }
+    .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+    header { background: #0f172a; color: white; padding: 20px 0; }
+    header h1 { margin: 0; }
+    nav a { color: white; text-decoration: none; margin: 0 20px; }
+    .setup-card { background: white; padding: 30px; margin: 20px 0; border-radius: 10px; border-left: 4px solid #2563eb; }
+    .setup-card h3 { color: #2563eb; margin-top: 0; }
+    .step { margin: 15px 0; }
+    .step strong { color: #0f172a; }
+    code { background: #f5f5f5; padding: 8px 12px; border-radius: 4px; font-family: monospace; display: inline-block; margin: 5px 0; }
+    .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    footer { background: #0f172a; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>EMS — Installation & Setup Guide</h1>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="employee-management-system.html">Project</a>
+        <a href="ems-setup.html">Setup</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="setup-card">
+      <h3>Step 1: System Requirements</h3>
+      <div class="step">
+        <strong>✓ Operating System:</strong> Windows, macOS, or Linux
+      </div>
+      <div class="step">
+        <strong>✓ Server:</strong> Apache 2.4 or above
+      </div>
+      <div class="step">
+        <strong>✓ PHP Version:</strong> PHP 7.0 or above
+      </div>
+      <div class="step">
+        <strong>✓ Database:</strong> MySQL 5.6 or above
+      </div>
+      <div class="step">
+        <strong>✓ Browser:</strong> Modern browser (Chrome, Firefox, Safari, Edge)
+      </div>
+      <div class="warning">
+        📌 <strong>Note:</strong> It's recommended to use XAMPP or WAMP stack which includes all requirements in one package.
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Step 2: Install XAMPP (Recommended)</h3>
+      <div class="step">
+        <strong>1.</strong> Download XAMPP from <code>https://www.apachefriends.org</code>
+      </div>
+      <div class="step">
+        <strong>2.</strong> Run the installer and follow the setup wizard
+      </div>
+      <div class="step">
+        <strong>3.</strong> Choose installation directory and components (Apache, MySQL, PHP)
+      </div>
+      <div class="step">
+        <strong>4.</strong> Complete installation and start Apache & MySQL services
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Step 3: Extract Project Files</h3>
+      <div class="step">
+        <strong>1.</strong> Navigate to XAMPP installation folder
+      </div>
+      <div class="step">
+        <strong>2.</strong> Go to <code>htdocs</code> folder (usually <code>C:\xampp\htdocs</code> on Windows)
+      </div>
+      <div class="step">
+        <strong>3.</strong> Extract EMS project files here
+      </div>
+      <div class="step">
+        <strong>4.</strong> Folder structure should look like:
+        <code style="display: block; margin: 10px 0;">
+          htdocs/ems-project/<br/>
+          ├── index.php<br/>
+          ├── login.php<br/>
+          ├── css/<br/>
+          ├── js/<br/>
+          └── database/
+        </code>
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Step 4: Database Setup</h3>
+      <div class="step">
+        <strong>1.</strong> Open phpMyAdmin: <code>http://localhost/phpmyadmin</code>
+      </div>
+      <div class="step">
+        <strong>2.</strong> Create new database named <code>ems_db</code>
+      </div>
+      <div class="step">
+        <strong>3.</strong> Import SQL file:
+        <div style="margin: 10px 0;">
+          - Select newly created database<br/>
+          - Click "Import" tab<br/>
+          - Browse and select <code>ems_db.sql</code> file<br/>
+          - Click "Go" to execute
+        </div>
+      </div>
+      <div class="warning">
+        ⚠️ <strong>Database Name:</strong> Keep database name as <code>ems_db</code> or update config.php accordingly.
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Step 5: Configure Database Connection</h3>
+      <div class="step">
+        <strong>1.</strong> Open <code>config.php</code> file in the project root
+      </div>
+      <div class="step">
+        <strong>2.</strong> Update database credentials:
+        <code style="display: block; margin: 10px 0;">
+          $db_host = "localhost";<br/>
+          $db_user = "root";<br/>
+          $db_password = "";<br/>
+          $db_name = "ems_db";
+        </code>
+      </div>
+      <div class="step">
+        <strong>3.</strong> Save the file
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Step 6: Access the Application</h3>
+      <div class="step">
+        <strong>1.</strong> Start XAMPP Control Panel (Apache & MySQL should be running)
+      </div>
+      <div class="step">
+        <strong>2.</strong> Open your browser and go to:
+        <code>http://localhost/ems-project</code>
+      </div>
+      <div class="step">
+        <strong>3.</strong> You should see the project homepage
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Step 7: Admin Login</h3>
+      <div class="step">
+        <strong>Username:</strong> <code>admin</code>
+      </div>
+      <div class="step">
+        <strong>Password:</strong> <code>admin123</code>
+      </div>
+      <div class="warning">
+        🔒 <strong>Important:</strong> Change the default password immediately after first login for security.
+      </div>
+    </section>
+
+    <section class="setup-card">
+      <h3>Troubleshooting</h3>
+      <div class="step">
+        <strong>Issue: "Cannot connect to database"</strong><br/>
+        Solution: Check if MySQL service is running and verify database credentials in config.php
+      </div>
+      <div class="step">
+        <strong>Issue: "404 Page Not Found"</strong><br/>
+        Solution: Ensure project is in correct htdocs folder and correct folder name is used in URL
+      </div>
+      <div class="step">
+        <strong>Issue: "Permission Denied"</strong><br/>
+        Solution: Check file permissions; ensure files are readable by Apache server
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Employee Management System</p>
+    </div>
+  </footer>
+
+</body>
+</html>

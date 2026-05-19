@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EMS — Technical Documentation</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body { background: #f4f7fb; }
+    .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+    header { background: #0f172a; color: white; padding: 20px 0; }
+    header h1 { margin: 0; }
+    nav a { color: white; text-decoration: none; margin: 0 20px; }
+    .doc-section { background: white; padding: 40px; margin: 20px 0; border-radius: 10px; }
+    .doc-section h2 { color: #2563eb; margin-bottom: 20px; border-bottom: 2px solid #2563eb; padding-bottom: 10px; }
+    .tech-stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .tech-item { background: #f0f4f8; padding: 20px; border-radius: 8px; }
+    .tech-item strong { color: #2563eb; }
+    code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { background: #0f172a; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>EMS — Technical Documentation</h1>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="employee-management-system.html">Project</a>
+        <a href="ems-documentation.html">Documentation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="doc-section">
+      <h2>Technology Stack</h2>
+      <div class="tech-stack">
+        <div class="tech-item">
+          <strong>Frontend</strong>
+          <p>HTML5, CSS3, Bootstrap, JavaScript</p>
+        </div>
+        <div class="tech-item">
+          <strong>Backend</strong>
+          <p>PHP 7.0+, Apache Server</p>
+        </div>
+        <div class="tech-item">
+          <strong>Database</strong>
+          <p>MySQL 5.6+, phpMyAdmin</p>
+        </div>
+        <div class="tech-item">
+          <strong>Tools</strong>
+          <p>Git, VSCode, XAMPP/WAMP Stack</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>System Architecture</h2>
+      <p>The Employee Management System follows a 3-tier architecture:</p>
+      <ul>
+        <li><strong>Presentation Layer:</strong> HTML, CSS, JavaScript for user interface</li>
+        <li><strong>Business Logic Layer:</strong> PHP for server-side processing and business operations</li>
+        <li><strong>Data Access Layer:</strong> MySQL database for persistent data storage</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>Database Structure</h2>
+      <p>The system uses multiple tables to manage different aspects:</p>
+      <ul>
+        <li><code>employees</code> - Employee information and details</li>
+        <li><code>attendance</code> - Daily attendance records</li>
+        <li><code>tasks</code> - Task assignments and tracking</li>
+        <li><code>salary</code> - Salary and payment information</li>
+        <li><code>performance</code> - Performance evaluation data</li>
+        <li><code>admin</code> - Administrator login credentials</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>Installation & Setup</h2>
+      <ol>
+        <li>Install XAMPP or WAMP server on your system</li>
+        <li>Extract the project files to the <code>htdocs</code> folder</li>
+        <li>Create a MySQL database named <code>ems_db</code></li>
+        <li>Import the SQL file to create all required tables</li>
+        <li>Open <code>http://localhost/project-name</code> in your browser</li>
+        <li>Login with admin credentials (default: admin/admin123)</li>
+      </ol>
+    </section>
+
+    <section class="doc-section">
+      <h2>Key Functionalities</h2>
+      <ul>
+        <li><strong>CRUD Operations:</strong> Create, Read, Update, Delete operations for all modules</li>
+        <li><strong>Authentication:</strong> Secure login system with password validation</li>
+        <li><strong>Data Persistence:</strong> All data is stored permanently in the database</li>
+        <li><strong>Report Generation:</strong> Ability to generate various reports in table format</li>
+        <li><strong>Responsive Design:</strong> Mobile-friendly interface for all screen sizes</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>Security Considerations</h2>
+      <ul>
+        <li>Password hashing using PHP's <code>password_hash()</code> function</li>
+        <li>SQL injection prevention using prepared statements</li>
+        <li>Session-based authentication with timeout</li>
+        <li>Input validation and sanitization on all forms</li>
+        <li>Secure cookie handling with <code>HttpOnly</code> flag</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Employee Management System</p>
+    </div>
+  </footer>
+
+</body>
+</html>
