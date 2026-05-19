@@ -6,86 +6,243 @@
   <title>Projects — Sumit Pokhrel</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
-    body { background: #f4f7fb; }
-    .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-    header { background: #0f172a; color: white; padding: 20px 0; margin-bottom: 40px; }
-    header h1 { margin: 0; }
-    nav a { color: white; text-decoration: none; margin: 0 20px; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-    .project-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-    .project-header { background: linear-gradient(to right, #2563eb, #0ea5e9); color: white; padding: 25px; }
-    .project-header h2 { margin: 0; font-size: 24px; }
-    .project-body { padding: 25px; }
-    .project-body p { margin: 10px 0; font-size: 15px; color: #555; }
-    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
-    .tech-tag { background: #e0e7ff; color: #2563eb; padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; }
-    .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
-    .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
-    .btn-primary { background: #2563eb; color: white; }
-    .btn-primary:hover { background: #1e40af; }
-    .btn-secondary { background: #f0f4f8; color: #2563eb; border: 1px solid #2563eb; }
-    .btn-secondary:hover { background: #e0e7ff; }
-    footer { background: #0f172a; color: white; text-align: center; padding: 20px 0; margin-top: 50px; }
+    body { 
+      background: #f9fafb; 
+      color: #333; 
+    }
+    main { 
+      padding: 60px 20px; 
+    }
+    .projects-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .projects-title h1 {
+      font-size: 42px;
+      color: #0f172a;
+      margin-bottom: 15px;
+    }
+    .projects-title p {
+      font-size: 18px;
+      color: #666;
+    }
+    .projects-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 35px;
+      margin-bottom: 60px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      border-color: #2563eb;
+    }
+    .project-header {
+      background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+      color: white;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .project-header h2 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 600;
+      relative: relative;
+      z-index: 1;
+    }
+    .project-body {
+      padding: 30px;
+    }
+    .project-desc {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tech-badge {
+      background: #f0f4f8;
+      color: #2563eb;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid #dbeafe;
+    }
+    .project-meta {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .project-meta strong {
+      color: #0f172a;
+    }
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: white;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+    }
+    .btn-secondary:hover {
+      background: #eff6ff;
+    }
+    .coming-soon {
+      background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%);
+      padding: 50px 40px;
+      border-radius: 14px;
+      text-align: center;
+      border: 2px dashed #2563eb;
+    }
+    .coming-soon h3 {
+      color: #2563eb;
+      font-size: 24px;
+      margin: 0 0 15px 0;
+    }
+    .coming-soon p {
+      color: #666;
+      margin: 0;
+      font-size: 16px;
+    }
+    .breadcrumb {
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+    .breadcrumb a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumb span {
+      color: #999;
+      margin: 0 8px;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>My Projects</h1>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About</a>
-        <a href="index.html">Projects</a>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo">Sumit <span>Pokhrel</span></div>
+        <div class="tag">BCSIT • Aspiring Project Manager</div>
+      </div>
+      <nav class="nav">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="index.html" class="nav-link active">Projects</a>
+        <a href="../certificates.html" class="nav-link">Certificates</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main>
+    <div class="projects-container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <strong>Projects</strong>
+      </div>
 
-    <section class="projects-grid">
+      <div class="projects-title">
+        <h1>My Projects</h1>
+        <p>Showcasing my work in web development and software engineering</p>
+      </div>
 
-      <!-- Employee Management System -->
-      <div class="project-card">
-        <div class="project-header">
-          <h2>Employee Management System</h2>
-        </div>
-        <div class="project-body">
-          <p>
-            A comprehensive web-based application for managing employee records, 
-            attendance, task assignments, salary details, and performance evaluations.
-          </p>
-          <div class="tech-tags">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">HTML5</span>
-            <span class="tech-tag">CSS3</span>
-            <span class="tech-tag">JavaScript</span>
+      <div class="projects-grid">
+        <!-- Employee Management System -->
+        <div class="project-card">
+          <div class="project-header">
+            <h2>Employee Management System</h2>
           </div>
-          <p><strong>Duration:</strong> Dec 2024 – Feb 2025</p>
-          <div class="links">
-            <a href="employee-management-system.html" class="btn btn-primary">View Project</a>
-            <a href="ems-documentation.html" class="btn btn-secondary">Documentation</a>
+          <div class="project-body">
+            <p class="project-desc">
+              A comprehensive web-based application for managing employee records, 
+              attendance tracking, task assignments, salary management, and performance evaluations.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Bootstrap</span>
+            </div>
+            <div class="project-meta">
+              <strong>Duration:</strong> Dec 2024 – Feb 2025
+            </div>
+            <div class="project-actions">
+              <a href="employee-management-system.html" class="btn btn-primary">View Project</a>
+              <a href="ems-documentation.html" class="btn btn-secondary">Documentation</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- More projects can be added here -->
-
-    </section>
-
-    <section style="background: white; padding: 40px; margin: 40px 0; border-radius: 10px; text-align: center;">
-      <h3 style="color: #0f172a; margin-bottom: 15px;">More Projects Coming Soon!</h3>
-      <p>I'm currently working on more exciting projects. Stay tuned for updates.</p>
-    </section>
-
+      <div class="coming-soon">
+        <h3>🚀 More Projects Coming Soon!</h3>
+        <p>I'm currently working on more exciting web development and software engineering projects. Stay tuned for updates!</p>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Sumit Pokhrel | All Rights Reserved</p>
-    </div>
+  <footer class="footer">
+    <div class="container">© 2025 • Sumit Pokhrel • Pokhara, Nepal</div>
   </footer>
 
 </body>
