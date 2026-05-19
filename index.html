@@ -48,7 +48,7 @@
 
         <ul class="quick-info">
           <li><strong>Email:</strong> mbpokharel@gmail.com</li>
-          <li><strong>Phone:</strong> 9868185156</li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/9779705044926?text=Hello%20Sumit%2C%20I%20want%20to%20contact%20you%20about%20your%20portfolio" target="_blank">9705044926</a></li>
           <li><strong>GitHub:</strong> <a href="https://github.com/cyberguycoder" target="_blank">cyberguycoder</a></li>
         </ul>
       </div>
@@ -104,14 +104,17 @@
         <div class="project-left">
           <h3>Employee Management System</h3>
           <p class="muted">
-            Web-based system to manage employee records, tasks, and evaluations. Built with core
-            PHP & MySQL — supports CRUD, task assignments, and admin role management.
+            My own academic project built with PHP and MySQL. It manages employee records, tasks,
+            evaluations, and admin workflows with a clean dashboard and CRUD operations.
           </p>
-          <a href="projects/employee-management-system.html" class="btn btn-primary small">Open Project Page</a>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="projects/employee-management-system.html" class="btn btn-primary small">Open Project Page</a>
+            <a href="https://github.com/cyberguycoder/employee-management-system" target="_blank" class="btn btn-ghost small">View on GitHub</a>
+          </div>
         </div>
 
         <div class="project-right">
-          <img src="assets/img/placeholder-project.png" alt="EMS screenshot" />
+          <a href="projects/employee-management-system.html"><img src="assets/img/placeholder-project.png" alt="EMS screenshot" /></a>
         </div>
       </div>
     </section>
@@ -195,8 +198,9 @@
           alert('Message sent successfully!');
           document.getElementById('contactForm').reset();
         }, function(error) {
-          alert('Failed to send message. Please try again.');
-          console.log('FAILED...', error);
+          const errText = error && (error.text || error.message || JSON.stringify(error));
+          alert('Failed to send message. Check console for details.');
+          console.error('EmailJS send error:', errText, error);
         });
     });
   </script>
